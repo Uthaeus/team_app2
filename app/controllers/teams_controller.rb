@@ -71,6 +71,7 @@ class TeamsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
       params.require(:team).permit(:name,
-                                    schedule_slots_attributes: [:opponent, :game_date, :location])
+                                    schedule_slots_attributes: [:id, :opponent, :game_date, :location, :_destroy]
+                                    )
     end
 end

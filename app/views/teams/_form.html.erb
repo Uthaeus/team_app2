@@ -20,11 +20,11 @@
     <h2>Games</h2>
     <div>
       <%= f.fields_for :schedule_slots do |slot| %>
-        <%= render partial: 'schedule_slot_fields', f: slot %>
+        <%= render 'schedule_slot_fields', f: slot %>
       <% end %>
 
       <div>
-        <% link_to_add_association 'Add Game', f, :schedule_slots %>
+        <%= link_to_add_association 'Add Game', f, :schedule_slots %>
       </div>
     </div>
 

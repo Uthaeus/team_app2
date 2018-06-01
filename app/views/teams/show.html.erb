@@ -5,5 +5,15 @@
   <%= @team.name %>
 </p>
 
+<div>
+  <% @team.schedule_slots.each do |slot| %>
+    <ul>
+      <li><%= slot.opponent %></li>
+      <li><%= slot.game_date %></li>
+      <li><%= slot.location %></li>
+    </ul>
+  <% end %>
+</div>
+
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
