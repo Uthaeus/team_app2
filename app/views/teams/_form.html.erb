@@ -1,4 +1,4 @@
-<%= form_with(model: team, local: true) do |form| %>
+<%= form_with(model: team, local: true) do |f| %>
   <% if team.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
@@ -12,11 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :team_name %>
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :team_name %>
+  </div>
+
+  <div>
+    <div>
+      <%= f.fields_for :schedule_slots do |slot| %>
+        <%= render 'schedule_slot_fields', f: slot %>
+      <% end %>
+
+      <div>
+        <% link_to_add_association 'Add Game', f, :schedule_slots %>
+      </div>
+    </div>
+
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>

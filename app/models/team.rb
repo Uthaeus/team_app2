@@ -5,5 +5,5 @@ class Team < ApplicationRecord
                                 allow_destroy: true,
                                 reject_if: lambda { |attrs| attrs['name'].blank? }
 
-  
+  validates_presence_of :name
 end

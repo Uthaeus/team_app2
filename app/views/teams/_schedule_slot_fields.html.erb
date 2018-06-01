@@ -1,0 +1,12 @@
+<div>
+  <%= f.label :opponent %>
+  <%= f.text_field :opponent, class: 'field' %>
+
+  <%= f.label :game_date %>
+  <%= f.date_field :game_date, class: 'field' %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location, class: 'field' %>
+  
+  <%= link_to_remove_association 'Remove Game', f %>
+</div>
