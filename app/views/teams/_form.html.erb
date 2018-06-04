@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, id: :team_name %>
   </div>
@@ -30,7 +30,7 @@
 
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
   </div>
 <% end %>
