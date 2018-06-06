@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def about
+    @teams = Team.team_for(current_user)
   end
 end

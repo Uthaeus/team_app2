@@ -6,4 +6,6 @@ class Team < ApplicationRecord
                                 reject_if: lambda { |attrs| attrs['opponent'].blank? }
 
   validates_presence_of :name
+
+  scope :team_for, ->(user) { where(user_id: user.id) }
 end
