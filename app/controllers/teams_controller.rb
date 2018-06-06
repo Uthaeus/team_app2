@@ -15,6 +15,7 @@ class TeamsController < ApplicationController
   # GET /teams/new
   def new
     @team = Team.new
+    1.times { @team.schedule_slots.build }
   end
 
   # GET /teams/1/edit
@@ -71,6 +72,8 @@ class TeamsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
       params.require(:team).permit(:name,
+                                    :main_image,
+                                    :thumb_image,
                                     schedule_slots_attributes: [:id, :opponent, :game_date, :location, :_destroy]
                                     )
     end

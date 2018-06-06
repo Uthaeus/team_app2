@@ -4,6 +4,12 @@
   <strong>Name:</strong>
   <%= @team.name %>
 </p>
+<div>
+  <%= @team.main_image %>
+</div>
+<div>
+  <%= @team.thumb_image %>
+</div>
 
 <div>
   <% @team.schedule_slots.each do |slot| %>
